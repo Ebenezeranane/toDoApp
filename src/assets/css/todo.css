@@ -1,0 +1,73 @@
+#app {
+display: flex;
+height: 100%;
+width: 100%;
+justify-content: center;
+}
+
+
+.app-container {
+    height: 80%;
+    justify-content: start;
+    position: absolute;
+    width: 30%;
+    margin-top: 50px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);  
+}
+
+.addlistbtn {
+    
+   height: 50px;
+   width: 50px;
+   background-color: white;
+   position: relative;
+   border: none;
+   border-radius: 50%;
+   right: -40%;
+   outline: none;
+   border: none;
+   top: 420px;
+   background-color: aqua;
+   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);  
+}
+
+.addlistbtn:hover{
+    cursor: pointer;
+}
+
+textarea{
+    
+    position: absolute;
+    border: none; 
+    margin-top: 20px;
+    margin-left: -20px;
+    padding:10px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.23);  
+}
+
+
+
+
+textarea:focus {
+ outline: none;
+ border:1px solid aqua;
+ box-shadow: 0 0px 0px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.23);  
+}
+
+.plus{
+    font-size: 20px;
+    color: white;
+}
+
+.savebtn{
+    background-color: rgb(18, 139, 18);
+    color:white;
+    border:none;
+    outline:none;
+    height: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    position: relative;
+    left: 280px;
+    top: 260px;
+}
