@@ -4,7 +4,17 @@
     <button  class="addlistbtn" @click = "showTextarea()"><i class="fas fa-plus plus"></i></button>
    <textarea  v-if="showTxtarea" v-model="todo" cols="40" rows="15" autofocus ></textarea>
     <button  v-if="showTxtarea" class="savebtn" @click="addTodo()">SAVE</button>
-    <ul><li v-for="todo in todos">{{Object.values(todo).toString()}}</li></ul>
+    <div v-if="!showTxtarea" :class="'list-box'">
+    <ul><li v-for=" (todo,index)  in todos" :key="index" :class="'list-style'">{{Object.values(todo).toString()}}
+    
+    <label class="container">
+    <input type="checkbox">
+    <span class="checkmark"></span>
+    </label>                                                              
+    </li>
+    </ul>
+    
+    </div>
     </div>
 
    
@@ -28,14 +38,18 @@ export default {
     },
 
     addTodo(){
+       
       this.$http.post("https://to-do-list-app-821e1.firebaseio.com/to-do-list/todo.json",{
         todo:this.todo
 
       }).then(
-        function (data) {
-          console.log(data)
+        function () {
+          location.reload()
         }
       )
+      
+     
+
     }
 
    
@@ -50,7 +64,7 @@ export default {
             function(data){
               
               for(let key in data){
-                arr.push(data[key]) 
+                arr.unshift(data[key]) 
               }
               
               
